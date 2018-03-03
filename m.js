@@ -15,14 +15,6 @@ chrome.omnibox.onInputEntered.addListener(
       chrome.tabs.update({
         url: "https://mail.google.com/mail/u/0/#inbox"
       });
-    } else if (text == "331") {
-      chrome.tabs.update({
-        url: "https://courses.cs.washington.edu/courses/cse331/18wi/"
-      });
-    } else if (text == "332") {
-      chrome.tabs.update({
-        url: "https://courses.cs.washington.edu/courses/cse332/18wi/"
-      });
     } else if (text == "puddle") {
       chrome.tabs.update({
         url: "https://github.com/uwmisl/puddle"
@@ -38,6 +30,14 @@ chrome.omnibox.onInputEntered.addListener(
     } else if (text == "tw") {
       chrome.tabs.update({
         url: "https://twitter.com"
+      });
+    } else if (/\d/.test(text)) {
+      chrome.tabs.update({
+        url: "https://courses.cs.washington.edu/courses/cse" + text + "/18wi/"
+      });
+    } else if (text == "m") {
+      chrome.tabs.update({
+        url: "https://github.com/chrstnb/shortlinks"
       });
     }
 });
